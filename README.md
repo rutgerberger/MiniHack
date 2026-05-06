@@ -3,7 +3,7 @@
 ---
 
 ## Summary
-Proposed is a fast-paced "Mini-Hack Friday" aimed to let students build custom AI-driven tools for their studying. The goal is to move beyond the limitations of Brightspace by creating personalized assistants that streamline the learning process without replacing the intellectual effort of studying.
+The fast-paced "Mini-Hack Friday" aims to let students build custom AI-driven tools for their studying. The goal is to move beyond the limitations of Brightspace by creating personalized assistants that streamline the learning process without replacing the intellectual effort of studying.
 
 *   **Event Window:** Friday Afternoon (13:00 – 17:00)
 *   **Timing:**
