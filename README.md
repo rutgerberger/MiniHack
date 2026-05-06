@@ -48,3 +48,5 @@ Calculemus will provide a **"Starter Kit"** consisting of:
 *   A folder of PDF files from a retired course.
 *   A boilerplate Python/Streamlit template for rapid UI deployment.
 *   Pizza and drinks to conclude the Friday afternoon session.
+
+Students can team up with 3-4 people.
