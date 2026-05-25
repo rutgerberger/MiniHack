@@ -62,7 +62,7 @@ Welcome to the Friday Mini-Hack! This repository contains the **Starter Baseline
 ## 📁 Repository Structure
 
 * `app.py` - The Streamlit frontend. Handles the chat interface and document loading UI.
-* `agent.py` - The brain. Connects to the **Groq API** (Llama 3) and handles the AI prompts.
+* `agent.py` - The brain. Connects to the **Groq API** and handles the AI prompts.
 * `document_parser.py` - The extractor. Reads through the `CourseMaterial/` folder and pulls text from PDFs and Markdown files.
 * `requirements.txt` - All the necessary Python packages.
 * `.env.example` - Template for your API keys (Security first!).
