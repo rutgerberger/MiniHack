@@ -36,8 +36,8 @@ with st.sidebar:
         )
         
         # [HACKATHON EXTENSION POINT]
-        # Currently, it just dumps the whole file text as context.
-        # Students should build a search/RAG function here to only pull relevant chunks!
+        # Currently, it just dumps the whole file text as context (limited to 8000 chars)... How can we optimize this?
+
         if selected_file == "All Materials (Caution: Large!)":
             # Combine everything (might exceed token limits depending on size!)
             st.session_state.selected_context = "\n".join(st.session_state.documents.values())[:8000] 
