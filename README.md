@@ -1,10 +1,4 @@
 ---
-title: "Calculemus Hack-a-Course: Friday Mini-Hack"
-description: "Build your own personalized AI Study Agent, tackle real-world information retrieval, and win epic prizes!"
-pubDate: "May 25 2026"
-location: "Snellius Building, Room 412"
----
-
 Welcome to the first official event of **Calculemus**! Ready to put theory into practice? Bring your laptop and your sharpest ideas, because we are diving straight into building smart solutions with modern AI frameworks. 
 
 Brightspace and scattered course materials can be a nightmare to navigate. This Friday, your mission is to solve that. You and your team will build a **Personalized Study Agent** that takes raw course files and transforms them into a tool that makes a student’s life easier, organized, and highly efficient. 
