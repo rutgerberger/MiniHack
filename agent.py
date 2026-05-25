@@ -15,12 +15,11 @@ client = Groq(api_key=api_key)
 
 def ask_study_agent(user_query, context=""):
     """
-    Sends a prompt to the Groq API using Llama 3. 
-    Students: Modify the 'system' prompt to change the agent's personality and rules!
+    Sends a prompt to the Groq API. 
     """
 
     system_prompt = (
-        "You are an elite, highly intelligent AI Study Assistant. "
+        "You are an highly intelligent AI Study Assistant. "
         "Your goal is to help a student learn effectively based on the provided course material context. "
         "Do not give direct answers to graded assignments; instead, explain the concepts."
     )
