@@ -57,19 +57,17 @@ Your browser will automatically open to `http://localhost:8501`. Click **"Load C
 
 ## 🧩 Where to Hack? (Extension Points)
 
-This baseline is intentionally basic. Your job is to make it smart! Look for `[HACKATHON EXTENSION POINT]` comments in the code:
+Here are some ideas to get started with:
 
 * **`document_parser.py`:** Add functions to read the `.ipynb` (Jupyter Notebook) files or `.mat` data files in the Course Materials. Build a smarter "chunking" algorithm so you don't overwhelm the LLM's context window.
-* **`app.py`:** Instead of loading the *entire* course into the chat context, build a search function (RAG - Retrieval-Augmented Generation) to only pass the most relevant paragraphs to the AI.
+* **`app.py`:** Instead of loading the *entire* course into the chat context, build a search function to only pass the most relevant paragraphs to the AI.
 * **`agent.py`:** Tweak the `system_prompt`. Make the agent act as a strict quiz-master, a flashcard generator, or an exam scheduler.
 
 ## ⚠️ Hackathon Rules
 
 1. **Empower, Don't Cheat:** Build tools that make students better, not lazier. Tools designed solely to solve graded assignments will be disqualified.
-2. **Safety First:** DO NOT use or hardcode University Leiden credentials anywhere. Keep your Groq API keys in the `.env` file and out of your scripts.
+2. **Safety First:** DO NOT use or hardcode University Leiden credentials anywhere. Keep your Groq API keys in the `.env` file and out of your scripts. Do not push the .env file to your repository!
 
 Good luck, and may the best Study Agent win! 🍕🏆
-
-Students can team up with 3-4 people.
 
 ---
