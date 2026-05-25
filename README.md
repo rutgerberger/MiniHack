@@ -36,8 +36,6 @@ pip install -r requirements.txt
 
 ```
 
-*(Note: This includes a specific version of `httpx` to prevent compatibility issues with the Groq client!)*
-
 ### 3. Add Your Groq API Key
 
 1. Create a new file named exactly `.env` in the root folder.
