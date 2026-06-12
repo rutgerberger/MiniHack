@@ -1,1 +1,0 @@
-Parts of this exercise has been greatly inspired by George Traskas' [tutorial on breast cancer prediction](https://github.com/gtraskas/breast_cancer_prediction/blob/master/breast_cancer.ipynb).

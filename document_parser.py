@@ -1,57 +1,51 @@
 import os
 from pypdf import PdfReader
 
-def extract_text_from_pdf(file_path):
-    """Extracts text from a single PDF file."""
+def extract_text_from_pdf(uploaded_file):
+    """Extracts text from an in-memory PDF file object."""
     text = ""
     try:
-        reader = PdfReader(file_path)
+        # PdfReader can read directly from the file-like object
+        reader = PdfReader(uploaded_file)
         for page in reader.pages:
             extracted = page.extract_text()
             if extracted:
                 text += extracted + "\n"
     except Exception as e:
-        print(f"Error reading PDF {file_path}: {e}")
+        print(f"Error reading PDF {uploaded_file.name}: {e}")
     return text
 
-def extract_text_from_txt(file_path):
-    """Extracts text from a standard text or markdown file."""
+def extract_text_from_txt(uploaded_file):
+    """Extracts text from an in-memory text/markdown file object."""
     try:
-        with open(file_path, 'r', encoding='utf-8') as f:
-            return f.read()
+        # Read the bytes and decode to a UTF-8 string
+        return uploaded_file.read().decode('utf-8')
     except Exception as e:
-        print(f"Error reading TXT {file_path}: {e}")
+        print(f"Error reading TXT {uploaded_file.name}: {e}")
         return ""
 
-def load_course_materials(base_dir="CourseMaterial"):
+def load_course_materials(uploaded_files):
     """
-    Recursively scans the directory and parses supported file types.
+    Parses a list of Streamlit UploadedFile objects.
     Returns a dictionary: { "filename": "extracted_text" }
     """
     documents = {}
     
-    # Walk through the directory tree
-    for root, dirs, files in os.walk(base_dir):
-        for file in files:
-            file_path = os.path.join(root, file)
+    for file in uploaded_files:
+        # Handle PDFs
+        if file.name.endswith('.pdf'):
+            documents[file.name] = extract_text_from_pdf(file)
             
-            # Handle PDFs (e.g., LectureSlides)
-            if file.endswith('.pdf'):
-                print(f"Parsing: {file}...")
-                documents[file] = extract_text_from_pdf(file_path)
-                
-            # Handle Markdown and Text (e.g., READMEs, clean notes)
-            elif file.endswith(('.md', '.txt', '.csv')):
-                print(f"Parsing: {file}...")
-                documents[file] = extract_text_from_txt(file_path)
-                
-            # [YOUR EXTENSION HERE] 
+        # Handle Markdown, Text, and CSV
+        elif file.name.endswith(('.md', '.txt', '.csv')):
+            documents[file.name] = extract_text_from_txt(file)
+            
+        # [YOUR EXTENSION HERE] - e.g., docx, pptx parsing
             
     return documents
 
 def chunk_text(text, chunk_size=1000):
     """
     A basic utility to split large texts into smaller chunks for the agent.
-    You can upgrade this!
     """
     return [text[i:i+chunk_size] for i in range(0, len(text), chunk_size)]
